@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>H5</title>
+    <script type="text/javascript">
+		document.documentElement.style.fontSize=document.documentElement.clientWidth/37.5+'px';
+	</script>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		.content{
+			width: 100%;
+			overflow: hidden;
+		}
+		.title{
+			width: 100%;
+			height: 40px;
+			background: #ccc;
+			font-size: 1.4rem;
+			color: #fff;
+			position: relative;
+			z-index: 1;
+		}
+		.left{
+			float: left;
+			line-height: 40px;
+			width: 20%;
+			text-align: center;
+		}
+		.left img{
+			height: 40px;
+		}
+		.center{
+			float: left;
+			line-height: 40px;
+			width: 60%;
+			text-align: center;
+		}
+		.right{
+			float: right;
+			line-height: 40px;
+			width: 20%;
+			text-align: center;
+		}
+		#leftNav{
+			width: 30%;
+			height: 100%;
+			background-color: #ccc;
+			position: absolute;
+			left: -30%;
+			top: 0;
+			-webkit-transition:left 0.5s;
+			z-index: 2;
+		}
+		#blackBack{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0,0,0,0.5);
+			opacity: 0;
+			z-index: 0;
+			-webkit-transition:opacity 0.5s;
+		}
+	</style>
+  </head>
+  <body>
+  	<div class="content">
+  		<div class="title">
+  			<div class="left" id="button"><img src="../images/menu.svg"></div>
+  			<div class="center">我是title</div>
+  			<div class="right">更多</div>
+  		</div>
+  		<div id="blackBack"></div>
+  		<div id="leftNav">
+  			<ul>
+  				<li>1</li>
+  				<li>2</li>
+  				<li>3</li>
+  				<li>4</li>
+  			</ul>
+  		</div>
+  	</div>
+  	<script type="text/javascript">
+  		var btn = document.getElementById('button');
+  		var nav = document.getElementById('leftNav');
+  		var back = document.getElementById('blackBack')
+  		btn.onclick = function(){
+  			nav.style.left = "0px";
+  			back.style.opacity = "1";
+  			back.style.zIndex = "1";
+  			back.onclick = function(){
+  				nav.style.left = "-30%"
+  				back.style.opacity = "0"
+  				back.style.zIndex = "0";
+  			}
+  		}
+  	</script>
+  </body>
+</html>
+

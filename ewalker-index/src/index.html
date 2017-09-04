@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+  	<div class="header">
+      <div class="logo">LOGO</div> 
+      <div class="title">启辕官方管理平台</div>
+      <div class="header-right">
+        <div class="top-bar">
+          <span style="color:#989898;margin-right: 20px; ">您好，XXXXX二手车交易市场</span>
+          <div class="attention">
+            <span>关注启辕</span>
+            <div class="erweima">
+                <img src="../images/erweima.png">
+                <p>扫一扫，即刻关注！</p>
+            </div>
+          </div>
+          <span class="theme" style="color: #ff7428;cursor: pointer;">换肤</span>
+          
+          <!-- <a href="" style="color: #ff7428;cursor: pointer;">退出</a> -->
+        </div>
+        <ul class="top-nav">
+          <li class="contact-us">
+            <p >
+              <span>关注启辕</span>
+              <span class="nav-top-er"></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span>消息</span>
+              <span class="nav-top-msg"></span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span>公告</span>
+              <span class="nav-top-notice"></span>
+              
+            </p>
+          </li>
+          <li>
+            <p>
+              <span>账户</span>
+              <span class="nav-top-user"></span>
+              
+            </p>
+          </li>
+          <li class="contact-us">
+            <p>
+              <span>关于我们</span>
+              <span class="nav-top-us"></span>
+              
+            </p>
+          </li> 
+          <li>
+            <p>
+              <span>退出</span>
+              <span class="nav-top-out"></span>
+            </p>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  	<div class="left-nav">
+
+    </div>
+
+
+  	<div class="content" id="content">
+  		<div class="index-center clearfix" id="contentCenter">
+  			<div class="index-center-left">
+          <div class="pick1">
+            <p class="title">今日交易量</p>
+            <p class="num">
+              28<span>台</span>
+            </p>
+          </div>
+          <div class="pick2">
+            <p class="title">本月交易量</p>
+            <p class="num">
+              128<span>台</span>
+            </p>
+          </div>  
+          <div class="pick3">
+            <p class="title">今日入库数</p>
+            <p class="num">
+              18<span>台</span>
+            </p>
+          </div>  
+          <div class="pick4">
+            <p class="title">本月入库数</p>
+            <p class="num">
+              118<span>台</span>
+            </p>
+          </div>     
+        </div>
+        <div class="index-center-center">
+          <h2 class="time" id="time"></h2>
+          <p class="date" id="date"></p>
+        </div>
+        <div class="index-center-right">
+          <p class="user-name">李俊杰</p>
+          <p class="user-type">销售</p>
+          <p class="ago-text">上次登录时间</p>
+          <p class="ago-time">2017-09-09 12:00:35</p>
+        </div>
+  		</div>
+  	</div>
+  	<script type="text/javascript">
+    $('.theme').click(function(){
+      if($('.header').hasClass('theme1')){
+        $('.header').removeClass('theme1')
+        $('.left-nav').removeClass('theme1')
+      }else{
+        $('.header').addClass('theme1')
+        $('.left-nav').addClass('theme1')
+      }
+    });
+
+    
+
+    var menuTreeArr = [{
+  "isLeaf": false,
+  "name": "竞拍系统",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": []
+},
+{
+  "isLeaf": false,
+  "name": "库存融资",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": [{
+    "isLeaf": true,
+    "name": "融资检测估值",
+    "url": "/list/page!toRptIndex.action?viewId=201&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "融资商户预收",
+    "url": "/list/page!toRptIndex.action?viewId=202&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "融资车收购付款",
+    "url": "/list/page!toRptIndex.action?viewId=203&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "融资车销售收款",
+    "url": "/list/page!toRptIndex.action?viewId=204&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "融资车商户结算",
+    "url": "/list/page!toRptIndex.action?viewId=205&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "融资车辆处置",
+    "url": "/list/page!toRptIndex.action?viewId=206&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "车辆处置后结算",
+    "url": "/list/page!toRptIndex.action?viewId=207&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  }]
+},
+{
+  "isLeaf": false,
+  "name": "场租物业",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": [{
+    "isLeaf": true,
+    "name": "场租区域管理",
+    "url": "/list/page!toRptIndex.action?viewId=301&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "物业费用科目",
+    "url": "/list/page!toRptIndex.action?viewId=302&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "商户资料管理",
+    "url": "/list/page!toRptIndex.action?viewId=303&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "入驻合同签订",
+    "url": "/list/page!toRptIndex.action?viewId=304&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "入驻合同收款",
+    "url": "/list/page!toRptIndex.action?viewId=305&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "商户合同清算",
+    "url": "/list/page!toRptIndex.action?viewId=306&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "物业总费用管理",
+    "url": "/list/page!toRptIndex.action?viewId=307&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "物业账单管理",
+    "url": "/list/page!toRptIndex.action?viewId=308&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  }]
+},
+{
+  "isLeaf": false,
+  "name": "统计分析",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": [{
+    "isLeaf": true,
+    "name": "商户车位数占比",
+    "url": "/form/report!returnForm.action?res=3",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "商户当前车辆数占比",
+    "url": "/form/report!returnForm.action?res=2",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "销售量报表",
+    "url": "/form/report!returnForm.action?res=0",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "拍卖车辆统计报表",
+    "url": "/form/report!returnForm.action?res=4",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "拍卖量与销售量统计",
+    "url": "/form/report!returnForm.action?res=1",
+    "icon": "",
+    "leavies": []
+  }]
+},
+{
+  "isLeaf": false,
+  "name": "库存车辆",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": [{
+    "isLeaf": true,
+    "name": "车商车位管理",
+    "url": "/list/page!toRptIndex.action?viewId=106&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "市场车辆管理",
+    "url": "/list/page!toRptIndex.action?viewId=101&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "车辆过户管理",
+    "url": "/list/page!toRptIndex.action?viewId=102&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "车辆离场管理",
+    "url": "/list/page!toRptIndex.action?viewId=103&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "车辆离场审核",
+    "url": "/list/page!toRptIndex.action?viewId=104&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "车辆检测管理",
+    "url": "/list/page!toRptIndex.action?viewId=105&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  }]
+},
+{
+  "isLeaf": false,
+  "name": "系统设置",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": [{
+    "isLeaf": true,
+    "name": "公司信息",
+    "url": "/list/page!toRptIndex.action?viewId=501&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "员工管理",
+    "url": "/list/page!toRptIndex.action?viewId=502&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  },
+  {
+    "isLeaf": true,
+    "name": "参数设置",
+    "url": "/list/page!toRptIndex.action?viewId=503&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  }]
+},
+{
+  "isLeaf": false,
+  "name": "互联网发布",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": []
+},
+{
+  "isLeaf": false,
+  "name": "交易市场信息管理",
+  "url": "",
+  "icon": "/sso/static/icon/nav_cheshang.png",
+  "leavies": [{
+    "isLeaf": true,
+    "name": "市场管理",
+    "url": "/list/page!toRptIndex.action?viewId=1001&rightCode=instock_car",
+    "icon": "",
+    "leavies": []
+  }]
+}]
+
+for (var i = 0; i < menuTreeArr.length; i++) {
+  var htmlStr = "";
+  if(menuTreeArr[i].isLeaf){
+    htmlStr += '<div class="nav-first menu-item">'
+               + '<p><i><img src="http://192.168.2.107:8080'+menuTreeArr[i].icon+'" /></i>'+menuTreeArr[i].name+'</p>'
+              +'</div> '
+  }else{
+    var listStr = "";
+    var listTreeArr = menuTreeArr[i].leavies;
+    for (var j = 0; j < listTreeArr.length; j++) {
+       listStr += '<li class="menu-item">'+listTreeArr[j].name+'</li>'
+       
+    }
+
+    htmlStr +=  '<div class="nav-first menu-box">'
+                + '<p><i><img src="http://192.168.2.107:8080'+menuTreeArr[i].icon+'" /></i>'+menuTreeArr[i].name+'</p>'
+                +  '<ul>'+listStr+'</ul>'
+                +'</div>'
+  }
+  $('.left-nav').append(htmlStr);
+}
+
+  
+  $('.menu-item').click(function(event){
+    event.stopPropagation();
+    $('.menu-item').removeClass('is-active')
+    $(this).addClass('is-active')
+    
+  })
+
+  $('.menu-box').click(function(){
+    if ($(this).hasClass('is-open')) {
+      $(this).removeClass('is-open');
+    }else{
+      $('.menu-box').removeClass('is-open');
+      $(this).addClass('is-open');
+    }
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        window.onload = function(){
+          setContentHeight();
+          setContentWeight();
+          getNowDate();
+        }
+        window.onresize = function () {
+          setContentHeight();
+          setContentWeight()
+        }
+
+        function setContentWeight(){
+          var proNum = window.innerWidth/1366;
+          if (window.innerWidth >= 1366) {
+            document.getElementById('contentCenter').style.WebkitTransform = 'scale('+proNum+','+proNum+')';
+            document.getElementById('contentCenter').style.transform = 'scale('+proNum+','+proNum+')';
+            document.getElementById('contentCenter').style.MozTransform = 'scale('+proNum+','+proNum+')';
+            document.getElementById('contentCenter').style.WebkitTransform = 'scale('+proNum+','+proNum+')';
+            document.getElementById('contentCenter').style.OTransform = 'scale('+proNum+','+proNum+')';
+          }
+        }
+        function setContentHeight() {
+          document.getElementById('content').style.minHeight = window.innerHeight-120 + 'px';
+        }
+        function getNowDate(){
+          var timeText = document.getElementById('time');
+          var dateText = document.getElementById('date');
+          var NowDate = new Date();
+          var myHours = NowDate.getHours()>9?NowDate.getHours().toString():'0' + NowDate.getHours();
+          var myMinutes = NowDate.getMinutes()>9?NowDate.getMinutes().toString():'0' + NowDate.getMinutes();
+          var mySeconds = NowDate.getSeconds()>9?NowDate.getSeconds().toString():'0' + NowDate.getSeconds();
+            timeText.innerHTML = myHours +':'+ myMinutes +':'+ mySeconds
+            dateText.innerHTML = NowDate.getFullYear() +'年' 
+                      + NowDate.getMonth() + '月' 
+                      + NowDate.getDate() +'日  '
+                      + turnWeek(NowDate.getDay());
+          setTimeout(()=>{this.getNowDate()},1000)
+        }
+        function turnWeek(n){
+          switch(n){
+            case 0:
+              return '星期日'
+              break;
+            case 1:
+              return '星期一'
+              break;
+            case 2:
+              return '星期二'
+              break;
+            case 3:
+              return '星期三'
+              break;
+            case 4:
+              return '星期四'
+              break;
+            case 5:
+              return '星期五'
+              break;
+            case 6:
+              return '星期六'
+              break;
+          }
+        }
+    </script>
+  </body>
+</html>
+
